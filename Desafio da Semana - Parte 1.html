@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio da Semana - Parte 1</title>
+</head>
+<body>
+    <style>
+
+        .botaozin {
+            background-color: blue;
+            width: 50px;
+            height: 25px;
+        }
+        .identificaUsuario, .valorMensal, .valorTempo, h1, h2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+    </style>
+    <h1>Fintech Paçoca</h1>
+    <h2>Simulador</h2>
+    <div class="identificaUsuario">
+        <label for=""> Nome </label>
+        <input type="text" id="nome">
+    </div>
+    <div class="valorMensal">
+        <label for=""> Mensalidade </label>
+        <input type="text" id="mensalidade">
+    </div>
+    <div class="valorTempo">
+        <label for=""> Tempo </label>
+        <input type="number" id="tempo">
+    </div>
+    <div class="botaozin">
+        <a href='Desafio da Semana - Parte 2.html'> Simular </a>
+    </div>   
+    <script>
+        var valor = document.getElementById('mensalidade').value;
+        var prazo = document.getElementById('tempo').value;
+        var taxa = (((509.65 / 20) ** (1/2)) ** 2) - 1;
+        var mont = valor * (1 + taxa) ** prazo;
+        document.getElementById("resultado").innerHTML = mont.toFixed(2);
+    </script>
+</body>
+</html>
